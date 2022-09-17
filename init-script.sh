@@ -23,3 +23,17 @@ ONBOOT="yes"
 EOF
 cat /tmp/network > $file
 systemctl restart network
+
+cat <<EOF >> /etc/hosts
+10.0.4.100	km1	km1.ioresponse.net
+10.0.4.98		km2	km2.ioresponse.net
+10.0.4.17		km3	km3.ioresponse.net
+10.0.4.121	kn1	kn1.ioresponse.net
+10.0.4.11		kn2	kn2.ioresponse.net
+10.0.4.6		kn3	kn3.ioresponse.net
+10.0.4.32		kn4	kn4.ioresponse.net
+10.0.4.26		kn5	kn5.ioresponse.net
+EOF
+
+hostnamectl set-hostname $(cat /etc/hosts|grep $IP|awk '{print $3}'
+reboot
