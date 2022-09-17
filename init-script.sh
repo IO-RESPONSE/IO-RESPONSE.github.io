@@ -35,5 +35,5 @@ cat <<EOF >> /etc/hosts
 10.0.4.26		kn5	kn5.ioresponse.net
 EOF
 
-hostnamectl set-hostname $(cat /etc/hosts|grep $IP|awk '{print $3}'
+hostnamectl set-hostname $(cat /etc/hosts|grep $IP|awk '{print $3}')
 reboot
