@@ -36,4 +36,5 @@ cat <<EOF >> /etc/hosts
 EOF
 
 hostnamectl set-hostname $(cat /etc/hosts|grep $IP|awk '{print $3}')
+
 reboot
